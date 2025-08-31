@@ -10,11 +10,11 @@ include $(TOPDIR)/rules.mk
 PKG_ARCH_quickstart:=$(ARCH)
 
 PKG_NAME:=quickstart
-PKG_VERSION:=0.10.4
+PKG_VERSION:=0.11.3
 PKG_RELEASE:=1
 PKG_SOURCE:=$(PKG_NAME)-binary-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/linkease/istore-packages/releases/download/prebuilt/
-PKG_HASH:=1582e0f4d0560f92ce4bcf1db0770bcad49a43d01a557ea1c72c1053c1be8549
+PKG_HASH:=fee17158398f7867eb20bf187fbfb2d12d46e44d2f9e882376173392a8979d14
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-binary-$(PKG_VERSION)
 
@@ -69,6 +69,8 @@ define Package/$(PKG_NAME)/install
 	$(LN) /usr/sbin/quickstart $(1)/usr/sbin/startdhns
 	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
 	$(INSTALL_BIN) ./files/startdhns.hotplug $(1)/etc/hotplug.d/iface/21-startdhns
+	$(INSTALL_DIR) $(1)/usr/share/quickstart
+	$(INSTALL_DATA) ./files/manuf $(1)/usr/share/quickstart/manuf
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
