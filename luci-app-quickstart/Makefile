@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for quickstart 
-LUCI_DEPENDS:=+quickstart +luci
+LUCI_DEPENDS:=+quickstart +luci-app-store
 LUCI_PKGARCH:=all
 
 PKG_VERSION:=0.12.6
@@ -18,5 +18,5 @@ LUCI_MINIFY_JS:=0
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
-# call BuildPackage 
+# call BuildPackage - OpenWrt buildroot signature
 
