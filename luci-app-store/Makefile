@@ -13,7 +13,7 @@ LUCI_DEPENDS+=$(if $(CONFIG_USE_APK),+apk +luci-compat,+opkg)
 LUCI_EXTRA_DEPENDS:=luci-lib-taskd (>=1.0.19)
 LUCI_PKGARCH:=all
 
-PKG_VERSION:=0.2.0.r3
+PKG_VERSION:=0.2.0-r3
 # PKG_RELEASE MUST be empty for luci.mk
 PKG_RELEASE:=
 
